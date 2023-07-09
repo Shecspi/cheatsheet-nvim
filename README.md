@@ -7,20 +7,25 @@
     fc-cache -v
     ```  
     - Установить [ripgrep](https://github.com/BurntSushi/ripgrep)  
-   ```bash
-   sudo pacman -S ripgrep
-   ```  
+    ```bash
+    sudo apt install ripgrep
+    ```  
     - Установить [lazygit](https://github.com/jesseduffield/lazygit)  
     ```bash
-    sudo pacman -S lazygit
+    LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+    curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+    tar xf lazygit.tar.gz lazygit
+    sudo install lazygit /usr/local/bin
     ```
 1. Удалить старую конфигурацию  
 ```bash
 rm -rf ~/.config/nvim ~/.local/share/nvim ~/.cache/nvim ~/.local/state/nvim
 ```
 2. Установить NeoVim  
-```bash
-sudo pacman -S neovim
+```
+sudo add-apt-repository ppa:neovim-ppa/stable; \
+sudo apt update; \
+sudo apt install neovim
 ```
 3. Загрузить конфигурацию AstroNVim  
 ```bash
