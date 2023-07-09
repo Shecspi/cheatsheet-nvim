@@ -24,7 +24,7 @@ rm -rf ~/.config/nvim ~/.local/share/nvim ~/.cache/nvim ~/.local/state/nvim
 ```
 2. Установить NeoVim  
 ```
-sudo add-apt-repository ppa:neovim-ppa/stable; \
+sudo add-apt-repository ppa:neovim-ppa/unstable; \
 sudo apt update; \
 sudo apt install neovim
 ```
