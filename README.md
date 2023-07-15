@@ -2,14 +2,17 @@
 
 ## Установка
 0. Подготовка к установке
-    - Установить специальных шрифтов Nerd Fonts. Их необходимо скачать с сайта https://www.nerdfonts.com/font-downloads и поместить в папку `~/.fonts`. После этого выполнить команду  
+    - Установить специальных шрифтов Nerd Fonts. Их необходимо скачать с сайта https://www.nerdfonts.com/font-downloads и поместить в папку `~/.local/share/fonts`. После этого выполнить команду  
     ```bash
     fc-cache -v
-    ```  
+    ```
+    И в настройках эмулятора терминала установить Nerd-шрифт в качестве основного.
+   
     - Установить [ripgrep](https://github.com/BurntSushi/ripgrep)  
     ```bash
     sudo apt install ripgrep
-    ```  
+    ```
+    
     - Установить [lazygit](https://github.com/jesseduffield/lazygit)  
     ```bash
     LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
@@ -18,7 +21,7 @@
     sudo install lazygit /usr/local/bin
     rm -rf lazygit*
     ```
-1. Удалить старую конфигурацию  
+2. Удалить старую конфигурацию  
 ```bash
 rm -rf ~/.config/nvim ~/.local/share/nvim ~/.cache/nvim ~/.local/state/nvim
 ```
